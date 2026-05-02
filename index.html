@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="鎌倉市内にあるお花屋さんです。自分のお部屋に飾るといった普段の日に。お誕生日や記念日といった特別な日に。ちょっとした「ありがとう」を伝えたい時に。あなたの日々の生活に癒しや彩りを添えるお手伝いをいたします。">
+  <meta name="keywords" content="鎌倉市内にあるお花屋さん,花束,アレンジメント,ボックスフラワー,ドライフラワー">
+  <title>Kamakura no Florist.</title>
+  <link rel="stylesheet" href="common/css/normalize.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet" href="common/css/style.css">
+  <link rel="stylesheet" href="common/css/g-nav.css">
+</head>
+<body>
+  <!-- headerここから -->
+  <header>
+  <div class="header-box container">
+    <!-- logoここから -->
+    <div class="logo-box">
+      <h1>
+        <a href="index.html">
+          <img src="common/images/logo-brown.png" alt="Kamakura no Florist.">
+        </a>
+      </h1>
+    </div>
+    <!-- logoここまで -->
+
+    <!-- navigationここから -->
+    <nav class="navigation">
+      <ul class="navigation-list">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about/about.html">当店について</a></li>
+        <li class="menu-item-has-children">
+          <a href="#">商品紹介
+            <span class="material-symbols-outlined">expand_more</span>
+          </a>
+          <ul class="sub-menu">
+            <li><a href="product/hanataba.html">花束</a></li>
+            <li><a href="product/arrangement.html">アレンジメント</a></li>
+            <li><a href="product/boxflower.html">ボックスフラワー</a></li>
+            <li><a href="product/driedflower.html">ドライフラワー</a></li>
+          </ul>
+        </li>
+        <li><a href="faq/faq.html">よくある質問</a></li>
+        <li><a href="contact/contact.html">お問い合わせ</a></li>
+      </ul>
+    </nav>
+    <!-- navigationここまで -->
+
+    <!-- hamburger menuここから -->
+    <button class="openbtn">
+      <span></span><span></span><span></span>
+    </button>
+    <!-- ここにアコーディオン付きナビゲーションを作る -->
+    <nav id="g-nav">
+      <div id="g-nav-list">
+        <div id="g-nav-list__item" class="nav-kasen home-kasen">
+          <a href="index.html">
+            HOME
+            <span class="material-symbols-outlined">chevron_right</span>
+          </a>
+        </div><!-- /.g-nav-list__item -->
+
+        <div id="g-nav-list__item" class="nav-kasen">
+          <a href="about/about.html">
+            当店について
+            <span class="material-symbols-outlined">chevron_right</span>
+          </a>
+        </div><!-- /.g-nav-list__item -->
+
+        <div id="product-title" class="nav-kasen">
+          <a href="#">商品紹介</a>
+        </div><!-- /#product-title-->
+
+        <div class="product-list nav-kasen">
+          <ul>
+            <li>
+              <a href="product/hanataba.html">
+                花束
+                <span class="material-symbols-outlined">chevron_right</span>
+              </a>
+            </li>
+            <li>
+              <a href="product/arrangement.html">
+                アレンジメント
+                <span class="material-symbols-outlined">chevron_right</span>
+              </a>
+            </li>
+            <li>
+              <a href="product/boxflower.html">
+                ボックスフラワー
+                <span class="material-symbols-outlined">chevron_right</span>
+              </a>
+            </li>
+            <li>
+              <a href="product/driedflower.html">
+                ドライフラワー
+                <span class="material-symbols-outlined">chevron_right</span>
+              </a>
+            </li>
+          </ul>
+        </div><!-- /.sub-menu -->
+        
+        <div id="g-nav-list__item" class="nav-kasen">
+          <a href="faq/faq.html">
+            よくある質問
+            <span class="material-symbols-outlined">chevron_right</span>
+          </a>
+        </div><!-- /.g-nav-list__item -->
+
+        <div id="g-nav-list__item" class="nav-kasen">
+          <a href="contact/contact.html">
+            お問い合わせ
+            <span class="material-symbols-outlined">chevron_right</span>
+          </a>
+        </div><!-- /.g-nav-list__item -->
+
+        <button id="g-nav-btn">
+          CLOSE
+          <span class="material-symbols-outlined">close</span>
+        </button><!-- /#g-nav-btn -->
+      </div><!-- /#g-nav-list -->
+    </nav><!-- /#g-nav -->
+    <!-- hamburger menuここから -->
+  </div><!-- /.container -->
+  </header>
+  <!-- headerここまで -->
+
+  <!-- メインコンテンツここから -->
+  <main>
+    <div class="main-visual space">
+      <!-- mp4を動画を自動再生のautoplay 自動再生のloop 消音設定のmuted インライン再生のplayinline 事前に読み込むpreload="auto" -->
+      <video src="common/video/movie.mp4" autoplay loop muted playsinline preload="auto"></video>
+      <div class="catch-copy">
+        <img src="common/images/catch-copy.png" alt="花のある生活から大切な人へのプレゼントまで癒しや彩りを添えるお手伝い">
+      </div>
+    </div>
+
+  <!-- お知らせはここから -->
+  <section class="container space">
+    <h2 class="headline">お知らせ</h2>
+    <div class="news-box">
+      <dl class="news">
+        <dt>
+          <time datetime="2023-10-09">2023.10.09</time>
+        </dt>
+        <dd>ダリア、バラなどを入荷しました </dd>
+      </dl>
+
+      <dl class="news">
+        <dt>
+          <time datetime="2023-10-01">2023.10.01</time>
+        </dt>
+        <dd>
+          <a href="news/article.html">Webサイトからご注文などもできるようになりました</a>
+        </dd>
+      </dl>
+
+      <dl class="news">
+        <dt>
+          <time datetime="2023-10-01">2023.10.01</time>
+        </dt>
+        <dd>
+          Kamakura no FloristのWebサイトをリニューアルしました
+        </dd>
+      </dl>
+      <a href="news/news.html" class="purple-btn">
+        MORE
+        <span class="material-symbols-outlined">chevron_right</span>
+      </a>
+    </div>
+  </section>
+  <!-- お知らせはここまで -->
+
+  <!-- 商品紹介ここから -->
+  <section class="purple-area space">
+    <div class="container">
+      <h2 class="headline">商品紹介</h2>
+      <div class="f-type">
+        <div class="f-type__list hanataba">
+          <a href="product/hanataba.html">
+            <img src="common/images/hanataba-main.jpg" alt="花束">
+           <div class="f-type__text">
+            <h3>花束</h3>
+            <p>
+              MORE
+              <span class="material-symbols-outlined">chevron_right</span>
+            </p>
+           </div>
+          </a>
+        </div>
+
+        <div class="f-type__list arrangement">
+          <a href="product/arrangement.html">
+            <img src="common/images/arrangement-main.jpg" alt="アレンジメント">
+            <div class="f-type__text">
+              <h3>アレンジメント</h3>
+              <p>
+                MORE
+                <span class="material-symbols-outlined">chevron_right</span>
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <div class="f-type__list boxflower">
+          <a href="product/boxflower.html">
+            <img src="common/images/boxflower-main.jpg" alt="ボックスフラワー">
+            <div class="f-type__text">
+              <h3>ボックスフラワー</h3>
+              <p>
+                MORE
+                <span class="material-symbols-outlined">chevron_right</span>
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <div class="f-type__list driedflower">
+          <a href="product/driedflower.html">
+            <img src="common/images/driedflower-main.jpg" alt="ドライフラワー">
+            <div class="f-type__text">
+              <h3>ドライフラワー</h3>
+              <p>
+                MORE
+                <span class="material-symbols-outlined">chevron_right</span>
+              </p>
+            </div>
+          </a>
+        </div><!--/.f-type__list-->
+      </div><!--/.f-type-->
+    </div><!--/.container-->
+  </section><!--/.purple-area-->
+  <!-- 商品紹介ここまで -->
+
+  <!-- ピックアップはここから -->
+  <section class="container space">
+    <h2 class="headline">Pick up</h2>
+    <div class="pick-up">
+      <div class="pick-up__item">
+        <a href="product/hanataba02.html">
+          <img src="common/images/hanataba-pickup.jpg" alt="ピックアップされた花束">
+        <p>
+          花束（Lサイズ）<br>
+          ¥7,700（税込）
+        </p>
+        </a>
+      </div>
+
+      <div class="pick-up__item">
+       <a href="product/arrangement02.html">
+        <img src="common/images/arrangement-pickup.jpg" alt="ピックアップされたアレンジメント">
+        <p>
+          アレンジメント（Lサイズ）<br>
+          ¥7,700（税込）
+        </p>
+       </a>
+      </div>
+
+      <div class="pick-up__item">
+       <a href="product/boxflower01.html">
+        <img src="common/images/boxflower-pickup.jpg" alt="ピックアップされたボックスフラワー">
+        <p>
+          ボックスフラワー（Lサイズ）<br>
+          ¥7,700（税込）
+        </p>
+       </a>
+      </div>
+
+      <div class="pick-up__item hidariyose">
+       <a href="product/driedflower01.html">
+        <img src="common/images/driedflower-pickup.jpg" alt="ピックアップされたドライフラワー">
+        <p>
+          ドライフラワー（Lサイズ）<br>
+          ¥7,700（税込）
+        </p>
+       </a>
+      </div><!-- /.pick-up__item -->
+    </div><!-- /.pick-up -->
+  </section>
+  <!-- ピックアップはここまで -->
+
+  <!-- 当店についてここから -->
+  <section class="about-box">
+    <div class="container about-box__list">
+      <img src="common/images/flower-shop.jpg" alt="花屋の写真">
+      <div class="about-box__text">
+        <h3>当店について</h3>
+        <p class="motto-br">
+          花を通して、<br>
+          「あなたの日々の生活に癒しや彩りを添える」<br>
+          お手伝いすることをモットーとしたフローリストです。
+        </p>
+        <p class="motto-br__none">
+          花を通して、「あなたの日々の生活に癒しや彩りを添える」
+          お手伝いすることをモットーとしたフローリストです。
+        </p>
+        <a href="about/about.html" class="purple-btn">
+          MORE
+          <span class="material-symbols-outlined">chevron_right</span>
+        </a>
+      </div><!-- /.about-box__text -->      
+    </div><!-- /.about-box__list -->  
+  </section><!-- /.about-box -->
+  <!-- 当店についてここまで -->
+</main>
+<!-- メインコンテンツここまで -->
+
+  <!-- フッターここから -->
+  <footer>
+    <div class="footer-box container">
+      <h2 class="footer-box__logo">
+        <a href="index.html">
+          <img src="common/images/logo-white.png" alt="Kamakura no Florist.">
+        </a>
+      </h2>
+
+      <nav class="footer-box__nav">
+        <ul>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+          <li><a href="law.html">特定商取引法に基づく表記</a></li>
+          <li><a href="sitemap.html">サイトマップ</a></li>
+        </ul>
+      </nav>
+
+      <p>&copy; 2023-<span class="copyright"></span> Kamakura no Frolist.</p>
+    </div> <!-- /.footer-box  -->
+  </footer>
+  <!-- フッターここまで -->
+  <!-- ページの先頭へ戻るボタンここから -->
+  <button class="pagetop">
+    <span class="material-symbols-outlined">arrow_back_ios_new</span>
+  </button>
+  <!-- ページの先頭へ戻るボタンここまで -->
+
+  <!-- jQueryの読み込み -->
+  <script src="common/js/jquery-3.7.1.min.js"></script>
+  <!-- 自作のjs -->
+  <script src="common/js/dropdown-menu.js"></script>
+  <script src="common/js/g-nav.js"></script>
+  <script src="common/js/focus.js"></script>
+  <script src="common/js/pagetop.js"></script>
+  <script src="common/js/copyright.js"></script>
+</body>
+</html>
