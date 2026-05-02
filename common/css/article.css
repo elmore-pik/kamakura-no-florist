@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+p {
+  text-align: justify; /*pタグを両端揃え*/
+}
+
+/* --------------------------
+641pxサイズ以下
+-------------------------- */
+@media (max-width: 641px) {
+  .breadcrumbs ul {
+    flex-direction: column; /*パンくずリストを縦並びにする*/
+    align-items: flex-start; 
+    gap: 10px;
+  }
+}

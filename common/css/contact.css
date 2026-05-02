@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+/* --------------------------
+855pxサイズ以下
+-------------------------- */
+@media (max-width: 855px) {
+  .anchor-link ul {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .anchor-link ul li {
+    padding-bottom: 20px;
+  }
+  .anchor-link ul li:last-child {
+    padding-bottom: 0;
+  }
+}

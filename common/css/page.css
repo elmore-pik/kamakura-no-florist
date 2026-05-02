@@ -1,0 +1,1035 @@
+@charset "utf-8";
+
+/* --------------------------
+共通項目
+-------------------------- */
+/* ページ内の余白 */
+.page-space {
+  margin-bottom: 70px;
+}
+
+.table-space, /*テーブル下の余白*/
+.policy-space,/*各プライバシーポリシー下の余白*/
+.contact-space {
+  /*各お問い合わせ下の余白*/
+  margin-bottom: 50px;
+}
+
+/* 大見出し */
+.headline {
+  width: 45%;
+  margin-bottom: 20px;
+}
+.headline-space {
+  margin-bottom: 40px; /*大見出し下の余白*/
+}
+
+/* --------------------------
+パンくずリスト
+-------------------------- */
+.breadcrumbs ul {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.breadcrumbs li {
+  font-weight: bold;
+}
+.breadcrumbs span {
+  padding-bottom: 2px;
+  display: inline-block;
+  font-size: 1rem;
+  transform: rotate(180deg);
+}
+.breadcrumbs a {
+  color: #664032;
+  text-decoration: underline;
+}
+.breadcrumbs a:hover,
+.breadcrumbs a:focus {
+  color: #ff0000;
+  text-decoration: underline;
+}
+
+/* --------------------------
+当店について
+-------------------------- */
+/* アンカーリンク */
+.anchor-link {
+  margin: 0 auto 40px auto;
+}
+.anchor-link ul {
+  display: flex;
+  justify-content: center;
+}
+.anchor-link a {
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+  font-size: 1.125rem;
+}
+.anchor-link span {
+  background: #884898;
+  color: #ffffff;
+  padding: 3px 2px;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+.anchor-link a:hover,
+.anchor-link a:focus {
+  color: #ff0000;
+}
+
+/*中見出し*/
+.medium-heading {
+  position: relative;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 0 3em;
+  width: 25%;
+  margin: 0 auto 30px auto;
+}
+.medium-heading::before,
+.medium-heading::after {
+  content: "";
+  width: 50px;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #664032;
+}
+.medium-heading::before {
+  left: 0;
+}
+.medium-heading::after {
+  right: 0;
+}
+
+/* メッセージ */
+#message img {
+  display: block;
+  margin-bottom: 50px;
+}
+#message p {
+  text-align: center;
+}
+
+/* 会社概要、フォーム*/
+.profile-table, /*会社概要のテーブル*/
+.order-table, /*ご注文商品の情報*/
+.customer-table, /*お客様の情報*/
+.shipping-table, /*お届け先の情報*/
+.contact-table {
+  /*お問い合わせについて*/
+  width: 100%;
+  border-collapse: collapse;
+}
+.profile-table tr,
+.order-table tr,
+.customer-table tr,
+.shipping-table tr,
+.contact-table tr {
+  border-top: 1px solid #664032;
+}
+.profile-table tr:last-child,
+.order-table tr:last-child,
+.customer-table tr:last-child,
+.contact-table tr:last-child {
+  border-bottom: 1px solid #664032;
+}
+.shipping-table tr {
+  border-top: 1px solid #664032;
+  border-bottom: 1px solid #664032;
+}
+.profile-table th,
+.order-table th,
+.customer-table th,
+.shipping-table th,
+.contact-table th {
+  padding: 30px 0;
+  font-weight: bold;
+  width: 30%;
+}
+.profile-table td,
+.order-table td,
+.customer-table td,
+.shipping-table td,
+.contact-table td {
+  padding: 20px 0 20px 20px;
+  width: 70%;
+}
+.profile-table th {
+  width: 20%;
+  text-align: left;
+}
+.bank-accounts {
+  /*銀行口座の囲み*/
+  width: 50%;
+  border: 1px solid #664032;
+  padding: 15px;
+}
+.subheading {
+  /*支払方法の見出し*/
+  margin: 5px 0;
+}
+.komejirushi {
+  margin-top: 5px; /*銀行振込の注意事項の上マージン*/
+}
+.setsumei {
+  margin-top: 0; /*ご来店の説明文の上マージンをゼロ*/
+}
+.komejirushi,
+.setsumei {
+  text-align: justify; /*両端揃え*/
+}
+.payment {
+  margin-bottom: 20px; /*銀行振込の注意事項の下マージン*/
+}
+
+/* --------------------------
+商品紹介
+-------------------------- */
+.guidance {
+  text-align: center; /* 商品紹介のご案内文を中央寄せ */
+  margin: 0 auto 40px auto;
+}
+.brown-heading {
+  /*商品紹介の中見出し*/
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 18px;
+  border-left: 5px solid #664032;
+  margin: 0 auto 30px auto;
+  background: #f1e2dc;
+}
+.product-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: calc(100% - 20px / 6);
+  gap: 20px;
+}
+.product-page a {
+  text-align: center;
+  border: 2px solid #fef4f4;
+  display: block;
+}
+.product-page a:hover,
+.product-page a:focus {
+  border: 2px solid #71236e;
+}
+
+/* --------------------------
+商品の詳細
+-------------------------- */
+.product-details {
+  display: flex;
+  justify-content: space-around;
+  width: calc(100% - 50px / 2);
+  gap: 50px;
+}
+.product-photo,
+.product-info {
+  width: 50%;
+}
+.product-photo img {
+  display: block;
+  margin: auto;
+  width: 62%;
+}
+.product-info h4 {
+  font-size: 1.5rem;
+  line-height: 1.5em;
+  margin-top: 0;
+}
+.product-info p {
+  margin-bottom: 30px;
+  text-align: justify; /*両端揃え*/
+  font-size: 1.0625rem;
+  font-weight: bold;
+  line-height: 1.5em;
+}
+.product-info li {
+  padding-bottom: 5px;
+  font-size: 0.875rem;
+  text-align: justify; /*両端揃え*/
+}
+
+/* --------------------------
+よくある質問
+-------------------------- */
+.faq-space {
+  margin-bottom: 35px; /*各質問の下の余白*/
+}
+.faq-box dt {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+.faq-box dd {
+  margin-left: 0;
+  background: #ffecfc;
+  padding: 20px;
+}
+
+/* --------------------------
+お花のご注文フォーム
+-------------------------- */
+.order-table th,
+.customer-table th,
+.shipping-table th,
+.contact-table th {
+  display: flex;
+  justify-content: space-between;
+  width: 87%;
+  font-size: 1.125rem;
+  align-items: center;
+}
+.any {
+  /*任意*/
+  padding: 5px 10px;
+  background: #696565;
+  color: #ffffff;
+  display: inline-block;
+  margin-left: 10px;
+}
+input[type="date"], /*お届け希望日*/
+.quantity input[type="number"], /*数量*/
+.budget input[type="number"], /*ご予算*/
+.post-code input[type="number"], /*郵便番号*/
+.todofuken select, /*都道府県一覧*/
+.telephone-number input[type="tel"] {
+  /*電話番号*/
+  width: 30%;
+  padding: 10px;
+  border: 1px solid #664032;
+}
+.required {
+  /*必須*/
+  padding: 5px 10px;
+  background: #ff0000;
+  color: #ffffff;
+  margin-left: 10px;
+}
+.flowers-types {
+  margin-right: 5px; /*お花の種類の右にマージン5px*/
+}
+.flowers-types__name, /*お花の種類名の右にマージン15px*/
+.method-payment__name, /*お支払い方法名の右にマージン15px*/
+.presence-message__umu, /*メッセージの有無の右にマージン15px*/
+.check__name, /*どちらかにチェックの右にマージン15px*/
+.contact-category__name {
+  /*お問い合わせの右にマージン15px*/
+  margin-right: 15px;
+}
+textarea {
+  width: 100%;
+  border: 1px solid #664032;
+}
+.cnt-area p,
+.address-list,
+.municipalities p,
+.house-number p,
+.BnameRoom-NumberNnumber p {
+  margin: 5px 0;
+  font-weight: bold;
+}
+input[type="number"] {
+  margin-right: 10px; /*数字を入力するinputの右側にマージン10px*/
+}
+input[type="checkbox"] {
+  margin-right: 5px; /*チェックボックスの右側にマージン5px*/
+}
+.budget p,
+.email-address p,
+.telephone-number p,
+.post-code p,
+.todofuken p,
+.address-number p,
+.town-name p {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+input[type="text"] {
+  padding: 10px;
+  width: 100%;
+}
+
+/* 住所の自動入力 */
+.address-space {
+  margin-top: 20px;
+}
+.autofill-address {
+  border: 1px solid #ff0000;
+  width: 165px;
+  padding: 10px;
+  color: #ff0000;
+  background: #ffffff;
+  position: relative;
+  text-align: left;
+  border-radius: 3%;
+  position: relative;
+}
+.autofill-address span {
+  position: absolute;
+  top: 7px;
+  right: 1px;
+}
+
+/* 郵便番号をお忘れの方ボタン */
+.address-btn a {
+  text-decoration: underline;
+  color: #0000ff;
+}
+
+.autofill-address:hover, /*住所の自動入力のホバー*/
+.autofill-address:focus {
+  /*住所の自動入力のフォーカス*/
+  border: 2px solid #6c52e8;
+  color: #6c52e8;
+}
+.address-btn a:hover, /*郵便番号をお忘れの方をホバー*/
+.address-btn a:focus {
+  /*郵便番号をお忘れの方をフォバー*/
+  color: #ff0000;
+}
+
+/* 市区町村、町名、丁目・番地・号、建物名・部屋番号・階数、メールアドレス*/
+.municipalities input[type="text"],
+.town-name input[type="text"],
+.address-number input[type="text"],
+.BnameRoom-NumberNnumber input[type="text"],
+.email-address input[type="email"] {
+  width: 65%;
+}
+.email-address input[type="email"] {
+  padding: 10px;
+}
+.post-code,
+.todofuken,
+.municipalities,
+.town-name,
+.address-number,
+.BnameRoom-NumberNnumber {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 同意する */
+.agree__name a {
+  text-decoration: underline;
+}
+.agree-area .agree-area__input {
+  display: flex;
+  justify-content: center;
+}
+.agree-area button {
+  display: block;
+  text-decoration: none;
+  background: #2d102c;
+  color: #fff;
+  text-align: center;
+  font-size: 1.125rem;
+  padding: 15px;
+  margin: 30px auto 0 auto;
+  width: 275px;
+  position: relative;
+  border: #ecd8e9;
+  border-radius: 2px;
+}
+.agree-area .material-symbols-outlined {
+  position: absolute;
+  top: 12px;
+  right: 5px;
+}
+.agree-area button:hover {
+  background: #71236e;
+}
+
+/* inputとtextareaとプルダウンメニューのホバーとフォーカス */
+input:hover,
+input:focus,
+textarea:hover,
+textarea:focus,
+.todofuken select:hover,
+.todofuken select:focus {
+  outline: 1px solid #e85298;
+  border-radius: 3px;
+  background: #fae3ee;
+}
+
+/* 注釈 */
+.notes {
+  padding-top: 10px;
+}
+
+/* --------------------------
+プライバシーポリシー
+-------------------------- */
+.policy-list ol li,
+.policy-list ul li {
+  margin-bottom: 10px;
+}
+.policy-list ol li:last-child,
+.policy-list ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* --------------------------
+サイトマップ
+-------------------------- */
+.sitemap-area__list {
+  border-bottom: 1px solid #664032;
+  margin: 0;
+}
+.sitemap-area__list dt {
+  font-size: 1.0625rem;
+  font-weight: bold;
+  padding: 20px 0;
+}
+.sitemap-area__list dd {
+  margin-left: 0;
+  padding-bottom: 20px;
+}
+.sitemap-area__list dd a {
+  text-decoration: underline;
+  color: #664032;
+  padding-right: 15px;
+}
+.sitemap-area__list dd a:hover,
+.sitemap-area__list dd a:focus {
+  color: #ff0000;
+}
+.border-top {
+  border-top: 1px solid #664032;
+}
+
+/* --------------------------
+お問い合わせ
+-------------------------- */
+/*中見出し*/
+.medium-heading__contact {
+  position: relative;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 0 3em;
+  width: 35%;
+  margin: 0 auto 30px auto;
+}
+.medium-heading__contact::before,
+.medium-heading__contact::after {
+  content: "";
+  width: 50px;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #664032;
+}
+.medium-heading__contact::before {
+  left: 0;
+}
+.medium-heading__contact::after {
+  right: 0;
+}
+#tel-contact p {
+  text-align: center;
+}
+#tel-contact a {
+  display: block;
+  text-decoration: none;
+  background: #2d102c;
+  color: #fff;
+  text-align: left;
+  font-size: 1.125rem;
+  padding: 15px;
+  margin: 20px auto 0 auto;
+  width: 210px;
+  position: relative;
+  border: #ecd8e9;
+  border-radius: 2px;
+}
+#tel-contact a:hover,
+#tel-contact a:focus,
+#email-contact a:hover,
+#email-contact a:focus {
+  background: #71236e;
+}
+#tel-contact a::before {
+  content: url(../images/telephone.png);
+  display: inline-block;
+}
+#tel-contact a span,
+#email-contact a span {
+  position: absolute;
+  right: 3%;
+  top: 25%;
+}
+#tel-contact dl {
+  width: 210px;
+  margin: 0 auto;
+  display: flex;
+  border-top: 1px solid #664032;
+  border-bottom: 1px solid #664032;
+  padding: 10px 0;
+  margin-top: 20px;
+}
+#email-contact a {
+  display: block;
+  text-decoration: none;
+  background: #2d102c;
+  color: #fff;
+  text-align: left;
+  font-size: 1.125rem;
+  padding: 15px;
+  margin: 20px auto 0 auto;
+  width: 260px;
+  position: relative;
+  border: #ecd8e9;
+  border-radius: 2px;
+}
+
+/* FAXよるお問い合わせ */
+.fax-guidance {
+  margin-bottom: 40px;
+}
+.contact-box,
+.order-box {
+  border: 2px solid #664032;
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 30px;
+}
+.order-box {
+  margin-bottom: 40px; /*各ご注文の流れ下の余白*/
+}
+
+/* お問い合わせとご注文の流れの見出し */
+.medium-heading__h4 {
+  font-size: 1.25rem;
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+  display: flex;
+  margin: 55px auto 40px auto;
+  text-align: center;
+  justify-content: center;
+}
+.medium-heading__h4::before {
+  content: "";
+  background: #f8dbf3;
+  width: 73px;
+  height: 73px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+/* ご注文の流れの1～3 */
+.contact-box h5,
+.order-box h5 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+.contact-box .fax-number,
+.order-box .fax-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 25px auto;
+}
+.contact-box a,
+.order-box a,
+.notes-box a {
+  display: block;
+  text-decoration: none;
+  background: #2d102c;
+  color: #fff;
+  text-align: left;
+  font-size: 1.125rem;
+  padding: 15px;
+  margin: 20px auto 0 auto;
+  width: 300px;
+  position: relative;
+  border: #ffffff;
+  border-radius: 2px;
+}
+.contact-box a span,
+.order-box a span,
+.notes-box a span {
+  position: absolute;
+  right: 2%;
+}
+.contact-box a:hover,
+.contact-box a:focus,
+.order-box a:hover,
+.order-box a:focus,
+.notes-box a:hover,
+.notes-box a:focus {
+  background: #71236e;
+}
+.triangle img {
+  width: 45px;
+  display: block;
+  margin: 0 auto 40px auto;
+}
+
+/* ご注文の注意事項 */
+.notes-btn a {
+  margin: 30px auto;
+}
+.payee {
+  display: flex; /*振込先*/
+  border-top: 1px solid #664032;
+  border-bottom: 1px solid #664032;
+  padding: 20px 0;
+}
+.payee dt {
+  font-weight: bold;
+  width: 10%;
+}
+.payee dd {
+  line-height: 2em;
+}
+
+/*キャンセルについて*/
+.notes-cancel {
+  margin-top: 30px;
+}
+.notes-cancel__list {
+  margin-left: 20px;
+}
+.notes-cancel__list li {
+  list-style: disc;
+}
+
+/* --------------------------
+1150pxサイズ以下
+-------------------------- */
+@media (max-width: 1150px) {
+  .product-name {
+    font-size: 1.375rem;
+    padding: 12px;
+  }
+  .product-info h4 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+  .product-info p {
+    font-size: 1rem;
+  }
+  .product-details {
+    flex-direction: column;
+    width: calc(100% - 30px / 2);
+    gap: 30px;
+  }
+  .product-photo,
+  .product-info {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .sitemap-area__list dd a {
+    margin-bottom: 15px;
+  }
+  .sitemap-area__list dd a:last-child {
+    margin-bottom: 0;
+  }
+  .medium-heading__contact {
+    width: 45%; /*お問い合わせページの中見出し*/
+  }
+}
+
+/* --------------------------
+1047pxサイズ以下
+-------------------------- */
+@media (max-width: 1047px) {
+  .page-space {
+    /* ページ内の余白 */
+    margin-bottom: 60px;
+  }
+  .guidance,      /*大見出しの下の余白*/
+  .anchor-link,   /* アンカーリンク下の余白 */
+  #message img {
+    /* 画像下の余白 */
+    margin-bottom: 30px;
+  }
+  .medium-heading {
+    /*中見出し*/
+    width: 30%;
+  }
+  .brown-heading {
+    /*茶色の見出し*/
+    font-size: 1.125rem;
+    padding: 12px;
+  }
+  .product-info h3 {
+    font-size: 1.25rem;
+  }
+  .faq-box dt {
+    font-size: 1.125rem;
+  }
+  .faq-guidance {
+    text-align: left; /*よくある質問の文言を中央揃え*/
+  }
+  .medium-heading__contact {
+    width: 50%; /*お問い合わせページの中見出し*/
+  }
+
+  /* お注文商品の情報をレスポンシブ対応 */
+  .order-table th,
+  .order-table td,
+  .customer-table th,
+  .customer-table td,
+  .shipping-table th,
+  .shipping-table td,
+  .contact-table th,
+  .contact-table td {
+    display: block;
+    text-align: left;
+  }
+  .order-table th,
+  .customer-table th,
+  .shipping-table th,
+  .contact-table th {
+    width: 100%;
+  }
+  .order-table td,
+  .customer-table td,
+  .shipping-table td,
+  .contact-table td {
+    padding: 0 0 30px 0;
+    width: 100%;
+  }
+  #count-down {
+    width: 100%;
+  }
+  .municipalities input[type="text"],
+  .town-name input[type="text"],
+  .address-number input[type="text"],
+  .BnameRoom-NumberNnumber input[type="text"],
+  .email-address input[type="email"],
+  .telephone-number input[type="tel"],
+  input[type="datetime-local"],
+  .post-code input[type="number"],
+  .todofuken select {
+    width: 100%;
+  }
+  
+  .quantity input[type="number"], /*数量*/
+  .budget input[type="number"] {
+    /*ご予算*/
+    width: 80%;
+  }
+
+  /* お問い合わせについて */
+  .contact-table th,
+  .contact-table td {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+  .contact-table th {
+    padding-bottom: 10px;
+  }
+
+  /* SafariのCSSハック */
+  ::-webkit-full-page-media, :future, :root {
+     /* お問い合わせについて */
+    .contact-table th,
+    .contact-table td {
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+    .contact-table th {
+      padding-bottom: 10px;
+    }
+  }
+
+  /* サイトマップ */
+  .sitemap-area__list dd {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* --------------------------
+814pxサイズ以下
+-------------------------- */
+@media (max-width: 814px) {
+  .medium-heading, /*当店についての中見出し*/
+  .medium-heading__contact {
+    /*お問い合わせの中見出し*/
+    font-size: 1.0625rem;
+  }
+  .medium-heading__contact {
+    width: 55%;
+  }
+  .medium-heading__contact::before,
+  .medium-heading__contact::after {
+    width: 45px;
+  }
+  .bank-accounts {
+    width: 100%; /*銀行口座の枠*/
+  }
+
+  /* 各ご注文の流れ下の余白 */
+  .order-box,
+  .triangle img {
+    margin-bottom: 30px;
+  }
+}
+
+/* --------------------------
+692pxサイズ以下
+-------------------------- */
+@media (max-width: 692px) {
+  /* 大見出し */
+  .headline {
+    width: 45%;
+    margin-bottom: 20px;
+  }
+  .medium-heading {
+    /*当店についての中見出し*/
+    width: 40%;
+  }
+  .medium-heading__contact {
+    /*お問い合わせの中見出し*/
+    width: 65%;
+  }
+
+  /* 会社概要をレスポンシブ対応 */
+  .profile-table th,
+  .profile-table td {
+    width: 100%;
+    display: block;
+  }
+  .profile-table th {
+    padding-bottom: 10px;
+  }
+  .profile-table td {
+    padding: 0 0 20px 0;
+  }
+
+  /* お問い合わせのh5 */
+  .contact-box h5,
+  .order-box h5 {
+    text-align: left;
+  }
+
+  /* 振込先 */
+  .payee {
+    display: block;
+  }
+  .payee dt {
+    width: 100%;
+    padding-bottom: 15px;
+  }
+  .payee dd {
+    margin-left: 0;
+  }
+}
+
+/* --------------------------
+523xサイズ以下
+-------------------------- */
+@media (max-width: 523px) {
+  .headline {
+    /*大見出し*/
+    width: 60%;
+  }
+  .medium-heading {
+    /*当店についての*中見出し*/
+    width: 60%;
+  }
+  .medium-heading__contact {
+    /*お問い合わせの中見出し*/
+    width: 75%;
+  }
+  #message p,
+  .guidance {
+    text-align: left;
+  }
+  #message br {
+    display: none; /*メッセージのbr要素を非表示*/
+  }
+  /* 商品紹介のご案内文を左寄せ */
+  .guidance {
+    text-align: left;
+    text-align: justify; /*両端揃え*/
+  }
+  #tel-contact p br {
+    display: none; /*電話によるお問い合わせの案内文にあるbrを非表示*/
+  }
+  #tel-contact p,
+  #email-contact p,
+  #fax-contact p {
+    text-align: justify; /*各お問い合わせの案内文を両端揃え*/
+  }
+}
+
+/* --------------------------
+454xサイズ以下
+-------------------------- */
+@media (max-width: 454px) {
+  .headline {
+    /*大見出し*/
+    width: 80%;
+  }
+  .medium-heading {
+    /*当店についての中見出し*/
+    width: 75%;
+  }
+  .medium-heading__contact {
+    width: 100%; /*各お問い合わせの中見出し*/
+  }
+  .agree-area .required {
+    display: inline-block;
+    margin: 10px 0 0 0;
+  }
+
+  /* FAX番号 */
+  .contact-box .fax-number,
+  .order-box .fax-number {
+    font-size: 1.5625rem;
+  }
+
+  /* お問い合わせとご注文の流れのボックス */
+  .contact-box,
+  .order-box {
+    padding: 20px;
+  }
+
+  /* お問い合わせシートとオーダーシートのボタン */
+  .contact-box a,
+  .order-box a {
+    width: 244px;
+    font-size: 1rem;
+  }
+}
+
+/* --------------------------
+343pxサイズ以下
+-------------------------- */
+@media (max-width: 343px) {
+  .medium-heading__contact {
+    font-size: 1rem;
+  }
+  .medium-heading__contact::before,
+  .medium-heading__contact::after {
+    width: 35px;
+  }
+  .product-info h4 {
+    font-size: 1.2rem; /*各商品名のフォントサイズ*/
+  }
+}

@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+.flowers-box,
+.check-box,
+.payment-box,
+.message-box {
+  display: flex;
+}
+.cnt-area_message p {
+  margin: 0 0 5px 0;
+}
+.cnt-area_message textarea {
+  height: 100px;
+}
+.cnt-area_message .notes {
+  padding-top: 0;
+}
+.cnt-area__message p {
+  margin: 0 0 5px 0;
+}
+.message_text { /* labelのメッセージ文の調整 */
+  display: block;
+  margin: 25px 0 10px 0;
+  font-weight: bold;
+  font-size: 1.125rem;
+}
+
+/* --------------------------
+1081pxサイズ以下
+-------------------------- */
+@media (max-width: 1081px) {
+  .order-table th,
+  .order-table td,
+  .shipping-table th,
+  .shipping-table td,
+  .customer-table th,
+  .customer-table td {
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding-left: 0;
+  }
+  .order-table th,
+  .shipping-table th,
+  .customer-table th {
+    padding-bottom: 15px;
+  }
+  textarea,
+  input[type="number"],
+  .municipalities input[type="text"],
+  .town-name input[type="text"],
+  .address-number input[type="text"],
+  .email-address input[type="email"],
+  .telephone-number input[type="tel"] {
+    width: 100%;
+  }
+  /* SafariのCSSハック、input[type="date"]を100%にする */
+  ::-webkit-full-page-media, :future, :root input[type="date"] {
+    width: 100%;
+  }
+
+  /* SafariのCSSハック、table thの下にパディングボトムを追加 */
+  ::-webkit-full-page-media, :future, :root .order-table th {
+    padding-bottom: 15px;
+  }
+  ::-webkit-full-page-media, :future, :root .shipping-table th {
+    padding-bottom: 15px;
+  }
+  ::-webkit-full-page-media, :future, :root .customer-table th {
+    padding-bottom: 15px;
+  }
+}
+
+/* --------------------------
+636pxサイズ以下
+-------------------------- */
+@media (max-width: 636px) {
+  .guidance {
+    text-align: left;
+  }
+  .guidance br {
+    display: none;
+  }
+}
+
+
+/* --------------------------
+568pxサイズ以下
+-------------------------- */
+@media (max-width: 568px) {
+    .flowers-box,
+    .check-box,
+    .payment-box {
+    display: block;
+  }
+}

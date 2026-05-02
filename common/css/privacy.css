@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+.guidance {
+  text-align: left;
+}
+.guidanc,
+.policy-list p,
+.policy-list ol li {
+  text-align: justify;
+}

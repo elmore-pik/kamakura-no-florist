@@ -1,0 +1,740 @@
+@charset "utf-8";
+
+/* --------------------------
+共通設定
+-------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box !important;
+}
+*:focus {
+  outline: none;
+}
+body {
+  font-size: 1rem;
+  font-family: "游明朝", "Yu Mincho", "YuMincho", "Hiragino Mincho Pro", serif;
+  color: #664032;
+  background: #fef4f4;
+  line-height: 1.5em;
+}
+.container {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+img {
+  width: 100%;
+  vertical-align: top;
+}
+a {
+  color: #664032;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+.space {
+  margin-bottom: 100px; /*各セクションの余白*/
+}
+.purple-area {
+  background: #e3c3de; /*薄紫のエリア*/
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.content { /*ヘッダーから下のコンテンツの位置*/
+  position: absolute;
+  top: 6%;
+}
+button {
+  outline: none;
+  border: none;
+  appearance: none; /*ボタンのデフォルトを無しにする*/
+}
+
+/* --------------------------
+ヘッダー
+-------------------------- */
+.header-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo-box {
+  width: 25%;
+}
+.logo-box img {
+  display: block;
+  width: 100%;
+}
+.navigation .navigation-list li {
+  border-bottom: 2px solid #fef4f4;
+}
+.navigation .navigation-list li:last-child {
+  border-bottom: none;
+}
+.logo-box h1 a,
+.navigation .navigation-list li a {
+  display: block;
+  padding: 10px;
+  font-weight: bold;
+}
+.logo-box h1 a:hover,
+.navigation .navigation-list li a:hover {
+  border-bottom: 2px solid #664032;
+}
+.logo-box h1 a:focus,
+.navigation .navigation-list li a:focus {
+  border: 2px solid #664032;
+  border-radius: 5px;
+}
+.navigation {
+  width: 60%;
+}
+.navigation .navigation-list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+.navigation .navigation-list li a {
+  text-align: center;
+}
+
+/* 商品紹介の下矢印 */
+.navigation .material-symbols-outlined {
+  vertical-align: bottom;
+}
+
+/* ドロップダウンメニュー */
+.navigation .menu-item-has-children {
+  position: relative;
+}
+.navigation .sub-menu {
+  position: absolute;
+  top: 150%;
+  left: 50%;
+  transform: translateX(-50%);
+  list-style: none;
+  background: #ecd8e9;
+  padding-left: 0;
+  width: 200px;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+  z-index: 999;
+}
+.navigation .sub-menu a:hover {
+  display: block;
+  background: #2d102c;
+  color: #ffffff;
+  padding-right: 0;
+  width: 100%;
+}
+
+/* ホバー＆フォースで子メニュー表示 */
+.navigation .menu-item-has-children:hover ul,
+.navigation .menu-item-has-children ul.focused {
+  opacity: 1;
+  visibility: visible;
+}
+.navigation li.menu-item-has-children li a:hover,
+.navigation li.menu-item-has-children li a:focus {
+  background: #2d102c;
+  color: #ffffff;
+  padding-right: 0;
+  border-radius: 0;
+}
+
+/* ドロップダウンメニューに上向き三角 */
+.navigation .sub-menu::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-bottom-color: #ecd8e9;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* --------------------------
+メインビジュアル
+-------------------------- */
+.main-visual {
+  width: 100%;
+  position: relative;
+}
+.main-visual video {
+  display: block;
+  width: auto;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  width: 72%;
+}
+.catch-copy {
+  position: relative;
+  width: 50%;
+  height: 0;
+  padding-bottom: 39.4%;
+}
+.catch-copy img {
+  position: absolute;
+  z-index: 2;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* --------------------------
+お知らせ
+-------------------------- */
+.headline { /*大見出し*/
+  width: 20%;
+  text-align: center;
+  border-top: 2px solid #664032;
+  border-bottom: 2px solid #664032;
+  padding: 20px 0;
+  margin: 0 auto 50px auto;
+  font-size: 2.1875rem;
+}
+.news-box .news {
+  display: flex;
+  border-bottom: 1px dotted #664032;
+  padding-bottom: 10px;
+}
+.news-box .news a {
+  text-decoration: underline;
+  color: #664032;
+}
+.news-box .news a:hover,
+.news-box .news a:focus {
+  color: #ff0000;
+  text-decoration: underline;
+}
+.news-box .purple-btn {
+  display: block;
+  text-decoration: none;
+  background: #2d102c;
+  color: #fff;
+  text-align: center;
+  font-size: 1.125rem;
+  padding: 15px;
+  margin: 20px auto 0 auto;
+  width: 25%;
+  position: relative;
+  border: #ecd8e9;
+  border-radius: 2px;
+}
+.news-box .purple-btn span {
+  position: absolute;
+  right: 5%;
+}
+.news-box .purple-btn:hover {
+  background: #71236e;
+}
+
+/* --------------------------
+商品紹介
+-------------------------- */
+.f-type {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: calc(100% - 40px / 4);
+  gap: 40px;
+}
+.hanataba,
+.arrangement,
+.boxflower,
+.driedflower {
+  position: relative;
+}
+.f-type__list a {
+  display: block;
+}
+.f-type__list img {
+  filter: brightness(0.4); /*画像の明度を下げる*/
+  border: 2px solid #ecd8e9;
+}
+.f-type__list a:hover img {
+  filter: brightness(1); /*ホバーしたら画像の明度を上げる*/
+  transition: filter 0.5s;
+  border: 2px solid #71236e;
+}
+.f-type__list a:focus img {
+  filter: brightness(1); /*フォーカスしたら画像の明度を上げる*/
+  transition: filter 0.5s;
+  border: 2px solid #71236e;
+}
+.hanataba .f-type__text,
+.arrangement .f-type__text,
+.boxflower .f-type__text,
+.driedflower .f-type__text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+}
+.f-type__text {
+  width: 80%;
+  text-align: center;
+  position: relative;
+}
+.f-type__text h3 {
+  font-size: 2.1875rem;
+}
+.f-type__text p {
+  font-size: 1.375rem;
+  padding: 15px;
+  border: 1px solid #ffffff;
+}
+.f-type__text span {
+  position: absolute;
+  right: 3%;
+}
+
+/* --------------------------
+ピックアップ
+-------------------------- */
+.pick-up {
+  display: flex;
+  justify-content: space-around;
+  width: calc(100% - 10px / 4);
+  gap: 10px;
+}
+.pick-up__item a {
+  text-align: center;
+  border: 2px solid #fef4f4;
+  display: block;
+}
+.pick-up__item a:hover,
+.pick-up__item a:focus {
+  border: 2px solid #71236e;
+}
+
+/* --------------------------
+当店について
+-------------------------- */
+.about-box {
+  width: 100%;
+  background: #e3c3de;
+}
+.about-box__list {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 31%;
+}
+/* Firefoxハック */
+@-moz-document url-prefix() {
+  .about-box__list {
+    padding-bottom: 42%;
+  }
+}
+.about-box__list img {
+  position: absolute;
+  z-index: 2;
+  width: 72%;
+  left: 0;
+  margin: 9.1% auto;
+  display: block;
+}
+.about-box__text {
+  position: absolute;
+  z-index: 3;
+  background: #ffffff;
+  padding: 30px;
+  top: 28%;
+  right: 0;
+}
+.about-box__text h3 {
+  font-size: 2.1875rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 15px;
+}
+.about-box__text p {
+  line-height: 1.5em;
+}
+.about-box__text .purple-btn {
+  display: block;
+  background: #2d102c;
+  color: #fff;
+  text-align: center;
+  font-size: 1.125rem;
+  padding: 15px;
+  width: 100%;
+  position: relative;
+  border: 1px solid #ffffff;
+  border-radius: 2px;
+}
+.about-box__text .purple-btn:hover,
+.about-box__text .purple-btn:focus {
+  background: #71236e;
+}
+.about-box__text .purple-btn span {
+  position: absolute;
+  right: 3%;
+}
+/* モットーのbrなしは非表示 */
+.motto-br__none {
+  display: none
+}
+
+/* --------------------------
+フッター
+-------------------------- */
+footer {
+  background: #2D102C;
+  padding: 20px 0;
+}
+.footer-box__logo a img {
+  display: block;
+  width: 40%;
+  margin: auto;
+  border: 1px solid #2D102C;
+  padding: 10px;
+  border-radius: 3px;
+}
+.footer-box__logo a img:hover,
+.footer-box__logo a:focus img {
+  border: 1px solid #ffffff;
+}
+.footer-box__nav ul {
+  display: flex;
+  justify-content: center;
+  margin: 50px auto;
+}
+.footer-box__nav li {
+  border: 1px solid #2D102C;
+}
+/*各メニューの左側に縦線を付与*/
+.footer-box__nav li::before {
+  content: '';
+  border-left: 1px solid #ffffff; 
+}
+/*最後のみに右側に縦線を付与*/
+.footer-box__nav li:last-child::after {
+  content: '';
+  border-right: 1px solid #ffffff;
+}
+.footer-box__nav a {
+  color: #ffffff;
+  padding: 10px 15px;
+}
+.footer-box__nav a:hover,
+.footer-box__nav a:focus {
+  border-bottom: 1px solid #ffffff;
+}
+/* コピーライト */
+footer p { 
+  text-align: center;
+  color: #ffffff;
+  font-size: 0.875rem ;
+}
+/* FirefoxのCSSハック */
+@-moz-document url-prefix() {
+  footer p { 
+    text-align: center;
+    color: #ffffff;
+    font-size: 0.875rem ;
+  }
+}
+
+/* --------------------------
+ページの先頭へ戻るボタン
+-------------------------- */
+.pagetop {
+  position: fixed;
+  bottom: 30px;
+  right: 5%;
+  width: 55px;
+  height: 52px;
+  z-index: 3;
+  padding: 10px;
+  text-align: center;
+  background: #884898;
+  color: #ffffff;
+  transition: 0.3s all; /*すべてのプロパティを対象で、0.3秒でアニメーション*/
+  border-radius: 3px;
+}
+.pagetop span {
+  transform: rotate(90deg); /*左向きの矢印を90度回転*/
+}
+.pagetop:hover,
+.pagetop:focus {
+  background: #71236e;
+}
+
+/* --------------------------
+1689pxサイズ以下
+-------------------------- */
+@media (max-width: 1689px) {
+  /* 当店について */
+  .about-box__list {
+    padding-bottom: 48%;
+  }
+  .about-box__list img {
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .about-box__text {
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* --------------------------
+1150pxサイズ以下
+-------------------------- */
+@media (max-width: 1150px) {
+  /* ヘッダー */
+  .container {
+    width: 90%;
+  }
+  /* CSSハック FIrefox */
+  @-moz-document url-prefix() {
+    .container {
+      width: 90%;
+    }
+  }
+  /* CSSハック Chrome */
+  @media screen and (-webkit-min-device-pixel-ratio:0){
+    .container {
+      width: 90%;
+    }
+  }
+  /* CSSハック Safari */
+  ::-webkit-full-page-media, :future, :root .container {
+    width: 90%;
+  }
+  /* CSSハック Edge */
+  @supports (-ms-ime-align: auto){
+    .container {
+      width: 90%;
+    }
+  }
+
+  .logo-box {
+    width: 50%;
+  }
+  
+  /* グローバルナビゲーションを非表示 */
+  .navigation {
+    display: none;
+    width: 10%;
+  }
+
+  /* 動画のサイズ */
+  .main-visual video {
+    width: 80%;
+  }
+  .catch-copy {
+    width: 60%;
+    height: 0;
+    padding-bottom: 45.1%;
+  }
+
+  /* 大見出し */
+  .headline {
+    font-size: 1.75rem;
+    padding: 15px 0;
+  }
+}
+
+/* --------------------------
+910pxサイズ以下
+-------------------------- */
+@media (max-width: 910px) {
+  /* ピックアップ */
+  .pick-up {
+    flex-wrap: wrap;
+    width: calc(100% - 30px / 4);
+    gap: 30px;
+  }
+
+  /* 各セクションの余白 */
+  .space {
+    margin-bottom: 80px;
+  }
+
+  /* 大見出し */
+  .headline {
+    font-size: 1.25rem;
+    margin: 0 auto 30px auto;
+    width: 30%;
+  }
+  /* お知らせ */
+  .news-box .news {
+    display: block;
+  }
+  .news-box .news dd {
+    margin-left: 0;
+  }
+  .news-box .purple-btn {
+    width: 60%;
+  }
+
+  /* 商品紹介 */
+  .product-box {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  /* 当店について */
+  .about-box__list {
+    padding-bottom: 100%;
+  }
+  .about-box__list img {
+    width: 100%;
+  }
+  .about-box__text {
+    width: 80%;
+  }
+
+  /* 892px以下になると3カラムに変化。
+  Pick upのドライフラワーが真ん中に来るので、
+  flexを指定している要素のafter疑似要素で空のボックスを作る */
+  .pick-up::after { 
+    content: '';
+    display: block;
+    flex-grow: 1; /*flexアイテムflex-growと左右のマージンを2倍にして2個分の大きさにすると上段のボックスサイズで折り返すように*/
+  }
+}
+
+/* --------------------------
+864pxサイズ以下
+-------------------------- */
+@media (max-width: 864px) {
+  /* pick-upのafter疑似要素を解除する */
+  .pick-up::after {
+    content: none;
+  }
+}
+
+/* --------------------------
+638pxサイズ以下
+-------------------------- */
+@media (max-width: 638px) {
+  /* ロゴマーク */
+  .logo-box {
+    width: 60%;
+  }
+    
+  /* お知らせ */
+  .news-box .purple-btn {
+    width: 60%;
+  }
+
+  /* 商品紹介 */
+  .f-type__text h3 {
+    font-size: 1.5625rem;
+  }
+  .f-type__text p {
+    font-size: 1.125rem;
+    padding: 12px;
+  }
+  .purple-area {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  /* 当店について */
+  .about-box__text h3 {
+    font-size: 1.5625rem;
+    margin: 10px;
+  }
+  .about-box__text p {
+    font-size: 1rem;
+    text-align: justify; /*両端揃え*/
+  }
+  .about-box__text .purple-btn {
+    font-size: 1.125rem;
+  }
+
+  /* フッター */
+  .footer-box__logo a img {
+    width: 60%;
+  }
+  .footer-box__nav ul {
+    display: block;
+  }
+  .footer-box__nav li {
+    padding: 10px;
+  }
+  .footer-box__nav li::before,
+  .footer-box__nav li:last-child::after {
+    display: none; /*縦線を非表示*/
+  }
+}
+
+/* --------------------------
+549pxサイズ以下
+-------------------------- */
+@media (max-width: 549px) {
+  .space {
+    margin-bottom: 70px; /*各セクションの余白*/
+  }
+  .headline { /*大見出し*/
+    width: 60%;
+  }
+
+  /* 当店について */
+  .about-box__list {
+    padding-bottom: 120%;
+  }
+  .about-box__text {
+    top: 70%;
+    width: 80%;
+    padding: 25px;
+  }
+  /* モットーのbrありは非表示 */
+  .motto-br {
+    display: none;
+  }
+  /* モットーのbrなしを表示 */
+  .motto-br__none {
+    display: block;
+  }
+
+   /* フッター */
+   .footer-box__logo a img {
+    width: 80%;
+  }
+}
+
+/* --------------------------
+398pxサイズ以下
+-------------------------- */
+@media (max-width: 398px) {
+  /* ロゴマーク */
+  .logo-box {
+    width: 70%;
+  }
+
+  /* 当店について */
+  .about-box__list {
+    padding-bottom: 160%;
+  }
+  .about-box__list img {
+    top: 24%;
+  }
+  .about-box__text {
+    top: 62%;
+  }
+
+  /* ページの先頭へ戻るボタン */
+  .pagetop {
+    width: 45px;
+    height: 45px;
+    bottom: 60px;
+  }
+}

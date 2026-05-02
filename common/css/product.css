@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+/* --------------------------
+526pxサイズ以下
+-------------------------- */
+@media (max-width: 526px) {
+  .breadcrumbs ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}

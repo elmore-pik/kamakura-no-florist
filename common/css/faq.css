@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+.faq-space ul {
+  padding-left: 16px;
+}
+.faq-space ul li {
+  list-style: disc;
+}
+.anchor-link ul {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: calc(100% - 20px / 6);
+  gap: 20px;
+}
+.faq-space a {
+  text-decoration: underline;
+}
+.faq-space a:hover,
+.faq-space a:focus {
+  color: #ff0000;
+}
+.faq-space dd {
+  text-align: justify;
+}
+
+/* --------------------------
+1920pxサイズ以下
+-------------------------- */
+@media (max-width: 1920px) {
+  .anchor-link ul::after {
+    content: '';
+    display: block;
+    flex-grow: 1;
+  }
+}
+
+/* --------------------------
+802pxサイズ以下
+-------------------------- */
+@media (max-width: 802px) {
+  .anchor-link ul::after {
+    content: none;
+  }
+  .anchor-link ul {
+    display: block;
+  }
+  .anchor-link li {
+    padding-bottom: 20px;
+  }
+  .anchor-link li:last-child {
+    padding-bottom: 0;
+  }
+}
+
+/* --------------------------
+639pxサイズ以下
+-------------------------- */
+@media (max-width: 639px) {
+  .guidance {
+    text-align: justify;
+  }
+  .guidance br {
+    display: none;
+  }
+}

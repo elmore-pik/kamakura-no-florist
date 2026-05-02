@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+/* --------------------------
+910pxサイズ以下
+-------------------------- */
+@media (max-width: 910px) {
+ .sitemap-area__list dt {
+  font-size: 1.125rem;
+ }
+}

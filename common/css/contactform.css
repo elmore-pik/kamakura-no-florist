@@ -1,0 +1,156 @@
+@charset "utf-8";
+
+/* エラーメッセージを赤にする */
+.error_list {
+  padding: 20px 40px;
+  color: #ff0000;
+  text-align: left;
+  border: 1px solid #ff0000;
+  border-radius: 5px;
+  margin-bottom: 40px;
+  background: #ffffff;
+}
+.error_list li {
+  list-style: disc;
+}
+
+/* プライバシーポリシーを縦並び */
+.agree-area__input {
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ボタンを横並び */
+.agree-area {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 入力内容の確認するボタン */
+.agree-area .submit-btn {
+  margin: 20px auto 0;
+}
+
+.agree-area .submit-btn,
+.btn-area .submit-btn {
+  display: block;
+  text-decoration: none;
+  background: #434aa4;
+  text-align: center;
+  font-size: 1.125rem;
+  padding: 15px;
+  width: 275px;
+  color: #ffffff;
+  border-radius: 2px;
+  border-style: none;
+}
+
+.btn-area .submit-btn,
+.btn-area .send-btn {
+  margin: 0 20px;
+}
+
+/* 送信するボタン */
+.btn-area .send-btn {
+  display: block;
+  text-decoration: none;
+  background: #8f1185;
+  text-align: center;
+  font-size: 1.125rem;
+  padding: 15px;
+  width: 275px;
+  color: #ffffff;
+  border-radius: 2px;
+  border-style: none;
+}
+
+/* 入力画面に戻るボタンと送信するボタンを横並びにする */
+.btn-area {
+  display: flex;
+  justify-content: center;
+}
+
+/* 戻るボタン */
+.purple-btn {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: #ffffff;
+  background: #2d102c;
+  text-align: center;
+  font-size: 1.125rem;
+  padding: 15px;
+  margin: 0 auto;
+  width: 275px;
+  border-radius: 2px;
+}
+
+/* --------------------------
+851pxサイズ以下
+-------------------------- */
+@media (max-width: 851px) {
+  .guidance {
+    text-align-last: left;
+  }
+  .customer-table p,
+  .contact-table p,
+  .todofuken p,
+  .town-name p {
+    margin-bottom: 22px;
+  }
+  .sendmail p {
+    text-align: justify;
+  }
+  .sendmail br {
+    display: none
+  }
+
+  /* SafariのCSSハック */
+  ::-webkit-full-page-media, :future, :root {
+    .contact-table p {
+      margin-bottom: 25px;
+    }
+  }
+}
+
+/* --------------------------
+814pxサイズ以下
+-------------------------- */
+@media (max-width: 814px) {
+  .guidance {
+    text-align-last: left;
+  }
+  .customer-table th,
+  .contact-table th {
+    padding-bottom: 15px;
+  }
+}
+
+/* --------------------------
+610pxサイズ以下
+-------------------------- */
+@media (max-width: 610px) {
+  .breadcrumbs ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .agree-area .submit-btn[type="submit"],
+  .purple-btn {
+    width: 220px;
+  }
+}
+
+/* --------------------------
+445pxサイズ以下
+-------------------------- */
+@media (max-width: 445px) {
+  .btn-area {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .btn-area .submit-btn,
+  .btn-area .send-btn {
+    margin: 0 auto;
+  }
+}

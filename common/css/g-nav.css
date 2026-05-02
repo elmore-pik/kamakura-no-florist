@@ -1,0 +1,320 @@
+@charset "utf-8";
+
+/* -----------------------------
+MENUがCLOSEに
+------------------------------- */
+/* ボタンのCSSをリセット */
+button {
+  background-color: transparent; /*透明色*/
+  cursor: pointer;
+  padding: 0;
+  background: #ECD8E9;
+  border-radius: 2px;
+}
+/* ボタン外側 */
+.openbtn {
+  display: none; /* PCの時は非表示*/
+  position: fixed; /*基点となるrelativeを指定*/
+  top: 14px;
+  right: 5%;
+  width: 55px;
+  height: 52px;
+  z-index: 99999;
+}
+.openbtn:hover,
+.openbtn:focus {
+  border: 2px solid #664032;
+  border-radius: 3px;      
+}
+
+/* ボタンの内側 */
+.openbtn span {
+  display: inline-block;
+  transition: all .4s; /*アニメーションの設定*/
+  position: absolute;
+  left: 11px;
+  height: 2px;
+  border-radius: 5px;
+  background: #664032;
+  width: 55%;
+}
+.openbtn span:nth-of-type(1) {
+  top: 11px;
+}
+.openbtn span:nth-of-type(2) {
+  top: 18px;
+}
+.openbtn span:nth-of-type(3) {
+  top: 26px;
+}
+.openbtn span:nth-of-type(3)::after {
+  content: "Menu"; /*3つ目の要素をafterにMenu表示を指定*/
+  position: absolute;
+  top: 7px;
+  left: -2px;
+  color: #664032;
+  font-size: 0.6rem;
+  text-transform: uppercase; /*すべての文字を大文字に変換*/
+  font-weight: bold;
+}
+/* Firefoxハック */
+@-moz-document url-prefix() {
+  .openbtn span:nth-of-type(3)::after {
+    font-size: 0.65rem;
+  }
+}
+
+/* activeクラスが付与ｓだれると線が回転して×になり、Menu⇒Closeに変更 */
+.openbtn.active span:nth-of-type(1) {
+  top: 14px;
+  left: 15px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 40%;
+}
+.openbtn.active span:nth-of-type(2) {
+  opacity: 0;
+}
+.openbtn.active span:nth-of-type(3) {
+  top: 26px;
+  left: 15px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 40%;
+}
+.openbtn.active span:nth-of-type(3)::after {
+  content: "Close"; /*3つ目の要素のafterにClose表示を指定*/
+  transform: translateY(0) rotate(-45deg);
+  top: 6px;
+  left: 6px;
+  color: #664032;
+  font-weight: bold;
+}
+
+/* -----------------------------
+ハンバーガーメニュー
+------------------------------ */
+#g-nav {
+  position: fixed;
+  z-index: 888;
+  /* ナビのスタート位置と形状 */
+  top: -200%; /*引っ込んでいる時は-200%の位置にいる*/
+  left: 0;
+  width: 100%;
+  height: 100vh; /*ナビの高さ*/
+  /* 動き */
+  transition: all 0.6s;
+}
+
+/* CSSハック Chrome */
+@media screen and (-webkit-min-device-pixel-ratio:0){
+  #g-nav {
+    position: fixed;
+    z-index: 888;
+    /* ナビのスタート位置と形状 */
+    top: -200%; /*引っ込んでいる時は-200%の位置にいる*/
+    left: 0;
+    width: 100%;
+    height: 100vh; /*ナビの高さ*/
+    /* 動き */
+    transition: all 0.6s;
+  }
+}
+
+/* CSSハック Edge */
+@supports (-ms-ime-align: auto){
+  #g-nav {
+    position: fixed;
+    z-index: 888;
+    /* ナビのスタート位置と形状 */
+    top: -200%; /*引っ込んでいる時は-200%の位置にいる*/
+    left: 0;
+    width: 100%;
+    height: 100vh; /*ナビの高さ*/
+    /* 動き */
+    transition: all 0.6s;
+  }
+}
+
+/* アクティブクラスがついたら位置は0に */
+#g-nav.panelactive {
+  top: 0;
+} 
+
+/* ナビゲーションの縦スクロール */
+#g-nav.panelactive #g-nav-list {
+  position: fixed;
+  z-index: 888;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  -webkit-overflow-srcolling: touch;
+}
+
+/* ナビゲーション */
+#g-nav-list {
+  /* ナビゲーション天地中央揃え */
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%); 
+  background: #ECD8E9;
+  padding: 120px 15px 0 15px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 2px;
+}
+
+/* メニューのレイアウト設置*/
+#g-nav-list__item,
+#product-title {
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+  padding: 15px 0;
+
+}
+#g-nav-list__item a,
+#product-title a {
+  padding: 15px;
+  display: block;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+#g-nav-list__item span,
+.product-list span {
+  position: absolute; /*右矢印の位置*/
+  right: 18%;
+}
+.home-kasen {
+  border-top: 1px solid #664032; /*ホームのみ上に線を付ける*/
+}
+.nav-kasen {
+  border-bottom: 1px solid #664032; /*メニュー下に下線を付ける*/
+}
+/* メニューのhover＆focus */
+#g-nav-list__item a:hover,
+#g-nav-list__item a:focus,
+#product-title a:hover,
+#product-title a:focus,
+.product-list a:hover,
+.product-list a:focus {
+  display: block;
+  background: #2D102C;
+  color: #ffffff;
+}
+.product-list {
+  display: none; /*商品紹介がクリックされていない場合は非表示*/
+}
+
+/* -----------------------------
+商品紹介のアコーディオンパネル
+------------------------------ */
+#product-title {
+  transition: 0.3s;
+  position: relative;                              
+}
+.product-list {
+  width: 70%;
+  margin: 0 auto;
+  display: none;
+}
+.product-list li {
+  padding: 15px 0;
+}
+.product-list li:first-child {
+  padding-top: 10px;
+}
+.product-list a {
+  font-weight: bold;
+  font-size: 1.25rem;
+  display: block;
+  padding: 15px;
+}
+
+/* アコーディオン */
+#product-title a::before { /* 閉じている時 */
+  content: '+';
+  position: absolute;
+  top: 35%;
+  right: 4%;
+  font-size: 1.3rem;
+}
+#product-title.open a::before { /* 開いている時 */
+  content: '－';
+  top: 35%;
+  right: 3.5%;
+  font-size: 1rem;
+} 
+
+/* 商品紹介の下線を除去 */
+#product-title.open {
+  border-bottom: none;
+}
+
+/* -----------------------------
+CLOSEボタン
+----------------------------- */
+#g-nav-btn {
+  padding: 18px;
+  background: #2D102C;
+  color: #fff;
+  width: 70%;
+  margin: 30px auto;
+  font-size: 1.25rem;
+  position: relative;
+  border-radius: 3px;
+}
+#g-nav-btn span {
+  position: absolute;
+  right: 3%;
+  top: 30.2%;
+}
+#g-nav-btn:hover,
+#g-nav-btn:focus {
+  background: #71236e;
+}
+
+/* -----------------------------
+1150pxサイズ以下
+----------------------------- */
+@media(max-width: 1150px) {
+  /* ハンバーガーメニューを非表示 */
+  .openbtn {
+    display: block;
+  }
+  /* CSSハック FIrefox */
+  @-moz-document url-prefix() {
+    .openbtn {
+      display: block;
+    }
+  }
+  /* CSSハック Chrome */
+  @media screen and (-webkit-min-device-pixel-ratio:0){
+    .openbtn {
+      display: block;
+    }
+  }
+  /* CSSハック Safari */
+  ::-webkit-full-page-media, :future, :root .openbtn {
+    display: block;
+  }
+  /* CSSハック Edge */
+  @supports (-ms-ime-align: auto){
+    .openbtn {
+      display: block;
+    }
+  }
+}
+
+/* -----------------------------
+398pxサイズ以下
+----------------------------- */
+@media(max-width: 398px) {
+  /* ハンバーガーメニューのフォントサイズ */
+  #g-nav-list__item a, 
+  #product-title a,
+  #g-nav-btn {
+    font-size: 1.125rem;
+  }
+}
